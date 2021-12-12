@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notification API</title>
+    <meta charset="utf-8" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 16px;
+        }
+        .button {
+            border: none;
+            border-radius: 6px;
+            background-color: #607d8b;
+            color: white;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            height: 64px;
+            padding: 8px 25px;
+            opacity: 1;
+            margin: 8px;
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: 0.87;
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="play" class="button">Play</button>
+    <script src="/notify.js"></script>
+  </body>
+</html>
