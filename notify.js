@@ -27,9 +27,9 @@ const setNotif = () => {
   const song = getSong();
   if (song && (!navigator.mediaSession.metadata || song.Name !== navigator.mediaSession.metadata.title)) {
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: song.Name,
-      artist: song.Artist,
-      album: song.Album,
+      title: song.name,
+      artist: song.artist,
+      album: song.album,
       artwork: song.images,
     });
   }
