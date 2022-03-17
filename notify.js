@@ -2,19 +2,19 @@ let currentSong = 0;
 let audio = null;
 const songs = [
   {
-    name: "RHM",
+    title: "RHM",
     artist: "Paris Texas",
     album: "Red Hand Akimbo",
     artwork: [{ src: 'album.jpg',   sizes: '544x544',   type: 'image/jpg' }],
   },
   {
-    name: "BULLSEYE",
+    title: "BULLSEYE",
     artist: "Paris Texas",
     album: "Red Hand Akimbo",
     artwork: [{ src: 'album.jpg',   sizes: '544x544',   type: 'image/jpg' }],
   },
   {
-    name: "Epilogue",
+    title: "Epilogue",
     artist: "Paris Texas",
     album: "Red Hand Akimbo",
     artwork: [{ src: 'album.jpg',   sizes: '544x544',   type: 'image/jpg' }],
@@ -26,12 +26,7 @@ const getSong = () => songs[currentSong];
 const setNotif = () => {
   const song = getSong();
   if (song && (!navigator.mediaSession.metadata || song.Name !== navigator.mediaSession.metadata.title)) {
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: song.name,
-      artist: song.artist,
-      album: song.album,
-      artwork: song.images,
-    });
+    navigator.mediaSession.metadata = new MediaMetadata(song);
   }
 };
 
